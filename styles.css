@@ -1,11 +1,18 @@
- /* Color palette inspired by cloudy summer day */
- :root {
-    --soft-blue: #b8c6db;
-    --cloud-white: #f9f9f9;
-    --muted-green: #A3C9A8;
-    --earthy-beige: #DDD0C8;
-    --dark-sage: #5c6e5c;
-    --text-dark: #363636;
+/* Color palette inspired by cloudy summer day */
+:root {
+    /* Primary Colors */
+    --primary: #5c6e5c; /* dark sage - main brand color */
+    --primary-light: #A3C9A8; /* muted green - accent color */
+    --primary-dark: #4a5a4a; /* darker sage - for hover states */
+    
+    /* Neutral Colors */
+    --neutral-light: #f9f9f9; /* cloud white - backgrounds */
+    --neutral: #DDD0C8; /* earthy beige - secondary backgrounds */
+    --neutral-dark: #363636; /* text dark - main text color */
+    
+    /* Accent Colors */
+    --accent: #b8c6db; /* soft blue - for highlights */
+    --accent-light: #d1dce8; /* lighter blue - for subtle effects */
 }
 
 * {
@@ -13,11 +20,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 body {
-    background: linear-gradient(135deg, var(--cloud-white), var(--soft-blue));
-    color: var(--text-dark);
+    background: linear-gradient(135deg, var(--neutral-light), var(--accent));
+    color: var(--neutral-dark);
     line-height: 1.6;
     min-height: 100vh;
     background-attachment: fixed;
@@ -31,7 +39,7 @@ body {
 
 /* Navigation */
 header {
-    background-color: white;
+    background-color: var(--neutral-light);
     backdrop-filter: blur(5px);
     position: fixed;
     width: 100%;
@@ -49,18 +57,18 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-sage);
+    color: var(--primary);
     align-self: baseline;
 }
 
 .logo span {
-    color: var(--muted-green);
+    color: var(--primary-light);
 }
 
 .motto {
     font-style: italic;
     font-size: 0.9rem;
-    color: var(--dark-sage);
+    color: var(--primary);
 }
 
 .nav-links {
@@ -75,13 +83,13 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--neutral-dark);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--muted-green);
+    color: var(--primary-light);
 }
 
 /* Hero Section */
@@ -128,8 +136,8 @@ nav {
 
 .btn {
     display: inline-block;
-    background-color: var(--dark-sage);
-    color: white;
+    background-color: var(--primary);
+    color: var(--neutral-light);
     padding: 12px 30px;
     border-radius: 30px;
     text-decoration: none;
@@ -138,7 +146,7 @@ nav {
 }
 
 .btn:hover {
-    background-color: var(--muted-green);
+    background-color: var(--primary-light);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -153,7 +161,7 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 50px;
-    color: var(--dark-sage);
+    color: var(--primary);
 }
 
 .about-content {
@@ -173,7 +181,7 @@ nav {
     flex: 1;
     min-width: 300px;
     height: 400px;
-    background-color: var(--earthy-beige);
+    background-color: var(--neutral);
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -191,8 +199,8 @@ nav {
 /* Featured Collections */
 .collections {
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--muted-green) 0%, var(--soft-blue) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    color: var(--neutral-light);
 }
 
 .collection-grid {
@@ -216,7 +224,7 @@ nav {
 
 .collection-image {
     height: 250px;
-    background-color: var(--earthy-beige);
+    background-color: var(--neutral);
     position: relative;
 }
 
@@ -251,7 +259,7 @@ nav {
 /* Visiting Section */
 .visit {
     padding: 100px 0;
-    background-color: var(--cloud-white);
+    background-color: var(--neutral-light);
 }
 
 .visit-content {
@@ -270,7 +278,7 @@ nav {
     flex: 1;
     min-width: 300px;
     height: 400px;
-    background-color: var(--soft-blue);
+    background-color: var(--accent);
     border-radius: 10px;
     position: relative;
 }
@@ -293,19 +301,19 @@ nav {
 }
 
 .contact-info strong {
-    color: var(--dark-sage);
+    color: var(--primary);
 }
 
 /* Newsletter */
 .newsletter {
     padding: 80px 0;
-    background-color: var(--earthy-beige);
+    background-color: var(--neutral);
     text-align: center;
 }
 
 .newsletter h2 {
     margin-bottom: 20px;
-    color: var(--dark-sage);
+    color: var(--primary);
 }
 
 .newsletter p {
@@ -328,8 +336,8 @@ nav {
 }
 
 .form-group button {
-    background-color: var(--dark-sage);
-    color: white;
+    background-color: var(--primary);
+    color: var(--neutral-light);
     border: none;
     padding: 0 25px;
     border-radius: 0 30px 30px 0;
@@ -338,13 +346,13 @@ nav {
 }
 
 .form-group button:hover {
-    background-color: var(--muted-green);
+    background-color: var(--primary-light);
 }
 
 /* Footer */
 footer {
-    background-color: var(--dark-sage);
-    color: white;
+    background-color: var(--primary);
+    color: var(--neutral-light);
     padding: 50px 0 20px;
 }
 
@@ -381,7 +389,7 @@ footer {
 }
 
 .footer-column a:hover {
-    color: white;
+    color: var(--neutral-light);
 }
 
 .social-links {
@@ -411,5 +419,191 @@ footer {
         flex: 100%;
         padding-right: 0;
         margin-bottom: 30px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+        
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-content,
+    .visit-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image,
+    .visit-info,
+    .map {
+        flex: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+
+    .form-group button {
+        border-radius: 30px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .about-image,
+    .map {
+        height: 300px;
+    }
+
+    .collection-image {
+        height: 200px;
+    }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary);
+        cursor: pointer;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--neutral-light);
+        padding: 20px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active li {
+        margin: 10px 0;
+    }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero {
+        background-image: url('hero@2x.jpg');
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: none;
+        color: #000;
+    }
+
+    .nav-links,
+    .btn,
+    .form-group button {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero,
+    .about,
+    .collections,
+    .visit,
+    .newsletter {
+        padding: 20px 0;
     }
 }
