@@ -1,20 +1,19 @@
-/* === Root Variables === */
 :root {
-  /* Dark theme color palette */
-  --primary-color: #2C3E50;      /* Deep blue-gray */
-  --secondary-color: #34495E;    /* Slightly lighter blue-gray */
-  --text-color: #ECF0F1;         /* Light gray for text (renamed from --dark-color) */
-  --background-color: #1A1A1A;    /* Very dark gray for backgrounds (renamed from --light-color) */
-  --accent-color: #E74C3C;       /* Bright red for accents */
-  --neutral-light: #2C2C2C;      /* Dark gray for subtle backgrounds */
-  --neutral-medium: #3D3D3D;     /* Medium gray for borders */
-  --neutral-dark-text: #B0B0B0;  /* Light gray for secondary text (Adjusted name/value from --neutral-dark) */
+  
+  --primary-color: #2C3E50;      
+  --secondary-color: #34495E;    
+  --text-color: #ECF0F1;         
+  --background-color: #1A1A1A;    
+  --accent-color: #E74C3C;       
+  --neutral-light: #2C2C2C;      
+  --neutral-medium: #3D3D3D;     
+  --neutral-dark-text: #B0B0B0;  
 
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   --transition: all 0.3s ease;
 }
 
-/* === Base Styles & Reset === */
+
 * {
   margin: 0;
   padding: 0;
@@ -30,8 +29,8 @@ body {
 }
 
 img {
-  display: block; /* Prevents bottom space under images */
-  max-width: 100%; /* Ensures images are responsive */
+  display: block; 
+  max-width: 100%; 
   height: auto;
   transition: filter 0.3s ease;
 }
@@ -40,21 +39,21 @@ img:hover {
   filter: brightness(1.05);
 }
 
-/* === Layout === */
+
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Added horizontal padding */
+  padding: 0 20px; 
 }
 
 section {
   padding: 100px 0;
-  position: relative; /* Needed for absolute positioned pseudo-elements */
-  overflow: hidden;  /* Contain pseudo-elements */
+  position: relative; 
+  overflow: hidden;  
 }
 
-/* === Typography === */
+
 h1, h2, h3 {
   font-family: 'Playfair Display', 'Times New Roman', serif;
   font-weight: 400;
@@ -100,7 +99,7 @@ p {
   margin: 20px auto 0;
 }
 
-/* === Buttons === */
+
 .btn,
 button[type="submit"] {
   display: inline-block;
@@ -126,19 +125,19 @@ button[type="submit"]:hover {
   transform: translateY(-2px);
 }
 
-/* === Header & Navigation === */
+
 header {
-  position: absolute; /* Changed from relative for overlay effect */
+  position: absolute; 
   width: 100%;
   padding: 25px 0;
-  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.2); 
   z-index: 10;
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s ease; /* Smooth transition on scroll, requires JS */
+  transition: background-color 0.3s ease; 
 }
 
-/* Add this to enable the scroll effect */
+
 header.scrolled {
   background-color: rgba(0, 0, 0, 0.9);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -154,21 +153,21 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative; /* For pseudo-element positioning */
+  position: relative; 
 }
 
 .logo {
-  font-family: 'Cormorant Garamond', serif; /* Changed from Playfair Display */
+  font-family: 'Cormorant Garamond', serif; 
   font-size: 2.4rem;
   color: var(--text-color);
   font-weight: 300;
   letter-spacing: 2px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  position: relative; /* For pseudo-element */
+  position: relative; 
 }
 
-.logo::before { /* Decorative line */
+.logo::before { 
   content: '';
   position: absolute;
   width: 40px;
@@ -176,7 +175,7 @@ nav {
   background-color: var(--primary-color);
   top: 50%;
   transform: translateY(-50%);
-  left: -50px; /* Adjust as needed */
+  left: -50px; 
 }
 
 .logo span {
@@ -190,13 +189,13 @@ nav {
   display: block;
   font-style: italic;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8); /* Lighter text */
+  color: rgba(255, 255, 255, 0.8); 
   letter-spacing: 1.5px;
   font-family: 'Cormorant Garamond', serif;
-  margin-left: 2px; /* Slight indent */
+  margin-left: 2px; 
 }
 
-/* Mobile Menu Button */
+
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -227,13 +226,13 @@ nav {
 
 .nav-links a {
   color: var(--text-color);
-  font-weight: 400; /* Was 500 */
+  font-weight: 400; 
   text-decoration: none;
   position: relative;
   padding-bottom: 5px;
 }
 
-.nav-links a::after { /* Underline effect */
+.nav-links a::after { 
   content: '';
   position: absolute;
   width: 0;
@@ -252,31 +251,31 @@ nav {
   width: 100%;
 }
 
-/* === Hero Section === */
+
 .hero {
   position: relative;
   background-image: url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
   background-size: cover;
   background-position: center;
   color: var(--text-color);
-  padding: 180px 0 120px; /* Increased top padding to account for absolute header */
-  min-height: 70vh; /* Ensure hero takes significant height */
+  padding: 180px 0 120px; 
+  min-height: 70vh; 
   display: flex;
   align-items: center;
 }
 
-.hero::before { /* Dark overlay */
+.hero::before { 
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Slightly less dark overlay */
+  background: rgba(0, 0, 0, 0.6); 
   z-index: 1;
 }
 
-.hero .container { /* Ensure container is above overlay */
+.hero .container { 
   position: relative;
   z-index: 2;
 }
@@ -292,14 +291,14 @@ nav {
 
 .hero h1 {
   color: var(--text-color);
-  font-size: 3rem; /* Slightly adjusted */
+  font-size: 3rem; 
   margin-bottom: 20px;
   font-weight: 700;
 }
 
-/* Style the span within hero h1 - remove inline style in HTML! */
+
 .hero h1 span {
-  color: var(--accent-color); /* Changed from primary - adjust if needed */
+  color: var(--accent-color); 
   font-weight: 700;
 }
 
@@ -309,13 +308,13 @@ nav {
   line-height: 1.6;
 }
 
-.hero .btn { /* Specific button style if needed */
-  font-weight: 600; /* Was missing 'px' */
+.hero .btn { 
+  font-weight: 600; 
 }
 
-/* === About Section === */
+
 .about {
-  background-color: var(--background-color); /* Use variable */
+  background-color: var(--background-color); 
 }
 
 .about-content {
@@ -331,19 +330,19 @@ nav {
 }
 
 .about-image img {
-  /* width: 100%; height: auto; defined globally */
+  
   border-radius: 5px;
   box-shadow: var(--shadow);
-  transition: var(--transition); /* Ensure global transition applies */
+  transition: var(--transition); 
 }
 
 .about-image img:hover {
   transform: scale(1.02);
 }
 
-/* === Collections Section === */
+
 .collections {
-  background-color: var(--background-color); /* Use variable */
+  background-color: var(--background-color); 
 }
 
 .collection-grid {
@@ -357,7 +356,7 @@ nav {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Combine transitions */
+  transition: transform 0.3s ease, border-color 0.3s ease; 
   border: 1px solid var(--neutral-medium);
   animation: fadeIn 1s ease-out forwards;
 }
@@ -388,11 +387,11 @@ nav {
 }
 
 .collection-info h3 {
-  color: var(--text-color); /* Ensure heading color */
+  color: var(--text-color); 
 }
 
 .collection-info p {
-  color: var(--neutral-dark-text); /* Use secondary text color */
+  color: var(--neutral-dark-text); 
   margin-bottom: 15px;
 }
 
@@ -404,11 +403,11 @@ nav {
   margin-top: 10px;
 }
 
-/* === Visit Section === */
+
 .visit {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
               url('https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') fixed center center/cover;
-  color: var(--text-color); /* Ensure text is readable */
+  color: var(--text-color); 
 }
 
 .visit-content {
@@ -425,7 +424,7 @@ nav {
 
 .contact-info {
   margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for dark bg */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); 
   padding-top: 30px;
 }
 
@@ -434,17 +433,17 @@ nav {
 }
 
 .contact-info strong {
-  color: var(--accent-color); /* Highlight labels */
+  color: var(--accent-color); 
   margin-right: 5px;
 }
 
 .map img {
-  /* width: 100%; height: auto; defined globally */
+  
   border-radius: 5px;
   box-shadow: var(--shadow);
 }
 
-/* === Newsletter Section === */
+
 .newsletter {
   background-color: var(--neutral-light);
   color: var(--text-color);
@@ -473,26 +472,25 @@ nav {
   flex: 1;
   padding: 15px;
   border: 1px solid var(--neutral-medium);
-  border-right: none; /* Connect input and button */
-  border-radius: 4px 0 0 4px; /* Rounded corners left side */
+  border-right: none; 
+  border-radius: 4px 0 0 4px; 
   font-size: 1rem;
-  background-color: var(--background-color); /* Darker input bg */
+  background-color: var(--background-color); 
   color: var(--text-color);
 }
 
 .form-group input[type="email"]:focus {
   outline: none;
   border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.3); /* Focus indicator */
+  box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.3);
 }
 
 .form-group button[type="submit"] {
-  border-radius: 0 4px 4px 0; /* Rounded corners right side */
-  padding: 0 30px; /* Keep padding */
-  box-shadow: none; /* Remove button shadow if desired */
+  border-radius: 0 4px 4px 0; 
+  padding: 0 30px; 
+  box-shadow: none; 
 }
 
-/* === Footer === */
 footer {
   background-color: var(--primary-color);
   color: var(--text-color);
@@ -502,7 +500,7 @@ footer {
 .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px; /* Increased gap */
+  gap: 40px;
   margin-bottom: 40px;
 }
 
@@ -520,7 +518,7 @@ footer {
 
 .footer-column ul {
   list-style: none;
-  padding: 0; /* Reset padding */
+  padding: 0; 
 }
 
 .footer-column ul li {
@@ -535,10 +533,9 @@ footer {
 
 .footer-column a:hover {
   color: var(--accent-color);
-  text-decoration: underline; /* Add underline on hover */
+  text-decoration: underline; 
 }
 
-/* Social Links Styling */
 .social-links {
     display: flex;
     gap: 15px;
@@ -560,7 +557,7 @@ footer {
 }
 
 .social-icon::after {
-    display: none; /* Remove underline effect for social icons */
+    display: none; 
 }
 
 .social-icon .icon {
@@ -569,12 +566,10 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Hover effects for social icons */
 .social-icon:hover {
     transform: translateY(-3px);
 }
 
-/* Specific colors for each social platform on hover */
 .social-icon.facebook:hover {
     background-color: #1877f2;
     color: white;
@@ -595,7 +590,7 @@ footer {
     color: white;
 }
 
-/* Media query adjustments */
+
 @media (max-width: 768px) {
     .social-links {
         justify-content: center;
@@ -624,22 +619,22 @@ footer {
 }
 .social-links a {
   background-color: var(--neutral-light);
-  color: var(--text-color); /* Use text color */
-  display: flex; /* Use flex for centering icon */
+  color: var(--text-color);
+  display: flex; 
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   transition: var(--transition);
-  font-size: 1rem; /* Adjust if using icon fonts */
-  text-decoration: none; /* Remove underline from icons */
+  font-size: 1rem; 
+  text-decoration: none; 
 }
 
 .social-links a:hover {
   background-color: var(--accent-color);
-  color: var(--text-color); /* Keep text color consistent */
-  transform: scale(1.1); /* Add subtle scale effect */
+  color: var(--text-color); 
+  transform: scale(1.1); 
 }
 
 .copyright {
@@ -650,23 +645,23 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* === Animations & Effects === */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Decorative pseudo-elements (Consider if truly needed) */
+
 .about::before,
 .collections::before {
   content: '';
   position: absolute;
   width: 150px;
   height: 150px;
-  background-color: rgba(44, 62, 80, 0.2); /* Use primary color with alpha */
+  background-color: rgba(44, 62, 80, 0.2); 
   border-radius: 50%;
-  z-index: -1; /* May hide behind section background */
-  opacity: 0.5; /* Make it subtle */
+  z-index: -1; 
+  opacity: 0.5; 
 }
 
 .about::before {
@@ -679,9 +674,9 @@ footer {
   right: 5%;
 }
 
-/* === Responsive Adjustments === */
+
 @media (max-width: 992px) {
-  /* Adjust grid layouts for tablets */
+ 
   .about-content,
   .visit-content {
     grid-template-columns: 1fr;
@@ -689,37 +684,37 @@ footer {
   }
 
   .about-image {
-    order: -1; /* Move image above text on smaller screens */
+    order: -1;
     margin-bottom: 30px;
   }
 
   .visit-info {
-      order: 1; /* Ensure info comes after map if needed */
+      order: 1; 
   }
 
   .map {
-      margin-top: 30px; /* Add space if map comes first */
+      margin-top: 30px;
   }
 }
 
 @media (max-width: 768px) {
-  /* Adjust header for mobile */
+  
   header {
-    position: fixed; /* Change from absolute to fixed */
+    position: fixed; 
     padding: 15px 0;
-    background-color: rgba(0, 0, 0, 0.9); /* More opaque for mobile */
+    background-color: rgba(0, 0, 0, 0.9); 
   }
   
-  /* Display the mobile menu button */
+ 
   .mobile-menu-btn {
     display: flex;
   }
   
-  /* Hide nav links by default on mobile */
+  
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* Hide off-screen */
+    right: -100%;
     width: 80%;
     max-width: 300px;
     height: 100vh;
@@ -733,7 +728,7 @@ footer {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   }
   
-  /* Show nav when active class is applied */
+  
   .nav-links.active {
     right: 0;
   }
@@ -743,7 +738,7 @@ footer {
     margin-left: 0;
   }
   
-  /* Hamburger to X animation */
+  
   .mobile-menu-btn.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
@@ -757,45 +752,44 @@ footer {
   }
 
   h1 {
-    font-size: 2.5rem; /* Adjusted for mobile */
+    font-size: 2.5rem;
   }
 
   h2 {
-    font-size: 2.2rem; /* Adjusted for mobile */
+    font-size: 2.2rem; 
   }
 
-  /* Center-align text in hero section */
+  
   .hero {
     text-align: center;
-    padding-top: 120px; /* Reduced from 180px for mobile */
-    min-height: 80vh; /* Adjusted height for mobile */
+    padding-top: 120px; 
+    min-height: 80vh;
   }
 
   .hero-content {
-    padding: 25px; /* Smaller padding on mobile */
-    margin: 60px auto 0; /* Add top margin to create space from header */
+    padding: 25px; 
+    margin: 60px auto 0; 
   }
 
-  /* Adjust navigation for mobile */
+  
   nav {
-    flex-direction: row; /* Keep side by side for logo and menu button */
+    flex-direction: row;
     align-items: center;
     text-align: center;
   }
 
   .logo-container {
-    align-items: center; /* Center logo elements */
+    align-items: center; 
   }
 
   .logo::before {
-    display: none; /* Hide decorative line on mobile */
+    display: none;
   }
 
   .logo {
-    font-size: 2rem; /* Smaller logo on mobile */
+    font-size: 2rem; 
   }
   
-  /* Adjust the form group for mobile */
   .form-group {
     flex-direction: column;
   }
@@ -813,7 +807,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-  /* Additional adjustments for very small screens */
+
   h1 {
     font-size: 2.2rem;
   }
@@ -831,6 +825,6 @@ footer {
   }
   
   .collection-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
+    grid-template-columns: 1fr; 
   }
 }
