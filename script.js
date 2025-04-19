@@ -1,22 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu elements
+document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    // Toggle mobile menu
     const toggleMobileMenu = () => {
         navLinks.classList.toggle('active');
         mobileMenuBtn.classList.toggle('active');
         
-        // Toggle aria-expanded for accessibility
         const isExpanded = navLinks.classList.contains('active');
         mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
     };
 
-    // Add click event listener to mobile menu button
     mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
-    // Close mobile menu when clicking on navigation links
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
@@ -25,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         const isClickInsideNav = navLinks.contains(e.target);
         const isClickOnButton = mobileMenuBtn.contains(e.target);
@@ -35,14 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Close mobile menu when window is resized to desktop size
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
             toggleMobileMenu();
         }
     });
     
-    // Add scroll effect to header
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -52,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Smooth scrolling for internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
